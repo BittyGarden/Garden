@@ -1,0 +1,13 @@
+## HBuider Project File
+*.project
+
+## Intelij idea ProjectFile
+.idea/
+*.iml
+
+## log file
+*.log
+
+## target/out file
+target/
+out/

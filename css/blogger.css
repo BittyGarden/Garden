@@ -1,0 +1,299 @@
+html, body {
+    font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f3efe0;
+}
+
+.my_container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.context {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.left {
+    width: 16%;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    overflow: hidden;
+}
+
+.left .top {
+    height: 6%;
+    width: 100%;
+    font-weight: normal;
+    text-shadow: none;
+    background: none rgb(250, 251, 252);
+    border-right: 1px solid rgb(225, 228, 232);
+    border-bottom: 1px solid rgb(225, 228, 232);
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 10px;
+    line-height: 50px;
+    color: #0f9dbf;
+}
+
+.left .bottom {
+    height: 94%;
+    width: 100%;
+}
+
+.left .bottom .treeview {
+    width: 100%;
+}
+
+.center {
+    width: 70%;
+    height: 100vh;
+    background-color: #00AAAA;
+    position: absolute;
+    left: 16%;
+}
+
+.center .top {
+    height: 6%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    font-weight: normal;
+    text-shadow: none;
+    background: none rgb(250, 251, 252);
+    border-right: 1px solid rgb(225, 228, 232);
+    border-bottom: 1px solid rgb(225, 228, 232);
+}
+
+.center .bottom {
+    height: 94%;
+    width: 100%;
+    position: absolute;
+    top: 6%;
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+    padding: 1% 4% 2% 4%;
+}
+
+#bloggerContext {
+    border-radius: 33px;
+    background-color: #d8d8d8;
+    padding: 2%;
+}
+
+.center .bottom .commit {
+    width: 100%;
+    height: 50px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.center .bottom .commit .commit_left {
+    width: 50%;
+    height: 100%;
+    float: left;
+    margin-left: 1%;
+    background-color: #ccc9c9;
+    border-radius: 20px;
+}
+
+.center .bottom .commit .commit_right {
+    width: 4%;
+    height: 100%;
+    float: right;
+    background-color: #ccc9c9;
+    border-radius: 12px;
+    margin-right: 1%;
+    padding-top: 21px;
+    padding-left: 14px;
+    cursor: pointer;
+}
+
+.center .bottom .commit .commit_right:hover {
+    background-color: #888888;
+}
+
+.commit_left .box1 {
+    float: left;
+    margin-top: 14px;
+    margin-left: 13px;
+    cursor: pointer;
+}
+
+.box1 .viewNumber {
+    margin-left: 30px;
+}
+
+.commit_left .box2 {
+    float: right;
+    margin-top: 17px;
+    margin-right: -17px;
+    cursor: pointer;
+}
+
+.box2 .loveNumber {
+    margin-right: 30px;
+    float: right;
+    position: relative;
+    right: 36px;
+}
+
+.right {
+    width: 14%;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    right: 0%;
+}
+
+.right .top {
+    height: 6%;
+    width: 100%;
+    font-weight: normal;
+    text-shadow: none;
+    background: none rgb(250, 251, 252);
+    border-right: 1px solid rgb(225, 228, 232);
+    border-bottom: 1px solid rgb(225, 228, 232);
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 10px;
+    line-height: 50px;
+    color: #808080;
+}
+
+.right .bottom {
+    height: 94%;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.right .bottom div div li {
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.center .top li {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    list-style-type: none;
+}
+
+#articleTitle {
+    width: 50%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    font-size: 22px;
+    line-height: 260%;
+    border-right: 1px #d8d3d0 solid;
+}
+
+#searchInput {
+    width: 30%;
+    height: 60%;
+    position: absolute;
+    top: 30%;
+}
+
+/*bootstrap-treeview*/
+.list-group {
+    padding-left: 0;
+    margin-bottom: 5px;
+}
+
+#tree ul li {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/*搜索框*/
+.uk-search-default {
+    width: 100%;
+    height: 100%;
+}
+
+.uk-search-input {
+    height: 100% !important;
+}
+
+.uk-list {
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    z-index: 5;
+    right: 0px;
+    width: 50%;
+    margin-top: -1px;
+    cursor: pointer;
+    max-height: 1000%;
+    overflow-y: scroll;
+    font-weight: normal;
+    text-shadow: none;
+    background: none rgb(250, 251, 252);
+    border-right: 1px solid rgb(225, 228, 232);
+    border-bottom: 1px solid rgb(225, 228, 232);
+}
+
+.uk-list div div li {
+    width: 100% !important;
+    text-align: left;
+    background-color: #d8d8d8;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    line-height: 160%;
+}
+
+.uk-list  div div li:hover {
+    background-color:#428bca;
+}
+
+.uk-list  div div li:nth-child(even) {
+    background-color: white;
+}
+
+.uk-list  div div li:nth-child(even):hover{
+    background-color: #428bca;
+}
+
+.uk-close {
+    position: absolute;
+    right: 15px;
+    height: 100%;
+}
+
+/*滚动条 */
+.bottom .mCustomScrollBox .mCSB_scrollTools .mCSB_draggerContainer {
+    left: 13px;
+}
+
+.uk-search-default .uk-search-input {
+    border: 1px solid white;
+}
+
+.uk-close {
+    color: #c7c7c8;
+}
+
+.cnblogs-markdown blockquote {
+    line-height: 1.5;
+    font-style: inherit;
+    font-size: 16px;
+}

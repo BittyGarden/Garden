@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="blogger_model" ng-controller="blogger_controller">
+<head>
+    <meta charset="UTF-8">
+    <title>蓝田</title>
+
+    <link rel="icon" href="../images/logo.ico" type="image/x-icon">
+
+    <link type="text/css" rel="stylesheet" href="../plugins/icon/iconWenting_Zhang.css"/>
+    <link type="text/css" rel="stylesheet" href="../plugins/toaster/css/toaster.css"/>
+    <link type="text/css" rel="stylesheet" href="../plugins/bootstrap/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="../plugins/bootstrap-treeview/bootstrap-treeview.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../plugins/scrollbar-plugin-3.1.5/jquery.mCustomScrollbar.min.css"/>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/css/uikit.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/blogger.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/cnblogs-markdown.css"/>
+    <link type="text/css" rel="stylesheet" href="../plugins/highlight/styles/default.css"/>
+
+
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/angular.js/1.4.8/angular.min.js"></script>
+    <script type="text/javascript" src="../plugins/angular-1.4.8/angular-ui-router.js"></script>
+    <script type="text/javascript" src="../plugins/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+    <script type="text/javascript" src="../plugins/scrollbar-plugin-3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!--<script src="http://open.iciba.com/huaci/huaci.js" ></script>-->
+    <script type="text/javascript" src="../plugins/angular-confirm-1.2.3/angular-confirm.js"></script>
+    <script type="text/javascript" src="../plugins/ui-bootstrap-0.14.3/ui-bootstrap-tpls-0.14.3.min.js"></script>
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit-icons.min.js"></script>
+    <script type="text/javascript" src="../plugins/highlight/highlight.pack.js"></script>
+    <script type="text/javascript" src="../plugins/marked/marked.min.js"></script>
+    <script type="text/javascript" src="../plugins/toaster/js/toaster.js"></script>
+
+
+    <script type="text/javascript" src="../javascript/factory/toaster_pop_factory.js"></script>
+    <script type="text/javascript" src="../javascript/constant.js"></script>
+    <script type="text/javascript" src="../javascript/blogger_app.js"></script>
+
+    <!--基础路径-->
+    <script type="text/javascript">
+        angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+    </script>
+</head>
+
+
+<body>
+<!--金山毒霸翻译插件-->
+<!--<div id="Jihuajiyi"></div>/-->
+
+<div class="my_container">
+    <div class="context">
+
+        <div class="left" id="left">
+            <div class="top" ng-cloak>
+                {{bloggerName}}
+            </div>
+            <div class="bottom" class="mCustomScrollbar">
+                <div id="tree"></div>
+            </div>
+        </div>
+
+        <div class="center">
+            <div class="top">
+                <li id="articleTitle" ng-cloak>{{articleTitle}}</li>
+                <li>
+                    <form class="uk-search uk-search-default">
+                        <span uk-search-icon></span>
+                        <input ng-model="searchText" ng-change="search()" class="uk-search-input" type="search"
+                               placeholder="">
+                        <button class="uk-close-large" type="button" uk-close ng-click="clearSearch()"></button>
+                    </form>
+                </li>
+                <ul class="uk-list uk-list-striped" ng-show="showSearchList">
+                    <li ng-cloak ng-repeat="result in searchResult track by $index" ng-click="openNode(result.nodeId)">
+                        {{result.fileName}}
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom">
+
+                <div id="bloggerContext" class="content article cnblogs-markdown">
+                </div>
+
+                <div class="commit">
+                    <div class="commit_left">
+                        <div class="box1">
+                            <div class="eye wz_icon"></div>
+                            <div ng-cloak class="viewNumber">{{viewNumber}}</div>
+                        </div>
+                        <div class="box2">
+                            <div class="heart wz_icon"></div>
+                            <div ng-cloak class="loveNumber">{{loveNumber}}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="top">
+                最近更新
+            </div>
+            <ul class="list-group bottom">
+                <li class="list-group-item"
+                   ng-cloak
+                   ng-repeat="result in recentUpdate track by $index"
+                   ng-click="recentUpdateClick(result.id, result.fileName)"
+                   ng-hide="result.hasChild"
+                >
+                    {{result.fileName}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+    <!--滚动条样式-->
+    <script>
+        (function($){
+            $(window).on("load",function(){
+                $(".left .bottom").mCustomScrollbar({
+                    axis:"y",
+                    theme:"minimal-dark"
+                });
+                $(".center .bottom").mCustomScrollbar({
+                    axis:"y",
+                    theme:"minimal-dark"
+                });
+                $(".center .top ul").mCustomScrollbar({
+                    axis:"y",
+                    theme:"minimal-dark"
+                });
+                $(".right .bottom").mCustomScrollbar({
+                    axis:"y",
+                    theme:"minimal-dark"
+                });
+            });
+        })(jQuery);
+    </script>
+</html>
